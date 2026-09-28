@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Stacknity.ai</title>
+<meta name="description" content="Your Stacknity.ai client dashboard.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23081410'/%3E%3Ccircle cx='32' cy='32' r='12' fill='none' stroke='%238cffc0' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%238cffc0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="dot"></span>STACKNITY<span class="grad">.AI</span></a>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="problems.html">Problems</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="dashboard.html" class="nav-login active">Dashboard</a>
+    </div>
+    <div class="nav-right">
+      <a href="contact.html" class="btn small">Start a project &#8599;</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="problems.html">Problems We Solve</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="contact.html" class="btn">Start a project &#8599;</a>
+</div>
+
+<div class="dash">
+  <div class="wrap">
+    <div class="dash-loading" id="dash-loading">CHECKING YOUR SESSION...</div>
+    <div id="dash-app" style="display:none">
+      <div class="dash-head">
+        <div>
+          <div class="eyebrow">CLIENT DASHBOARD</div>
+          <h2 id="dash-greeting">Welcome back.</h2>
+          <p>Signed in as <span id="dash-email" style="color:var(--cyan)"></span> &middot; member since <span id="dash-since"></span></p>
+        </div>
+        <button class="btn danger small" id="dash-signout">Sign out</button>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card">
+          <div class="k">ACCOUNT</div>
+          <div class="stat-v">Active</div>
+          <p style="margin-top:10px">Your client account is live. Engagements and project workspaces appear here as they start.</p>
+        </div>
+        <div class="dash-card">
+          <div class="k">ENGAGEMENTS</div>
+          <div class="stat-v">0 open</div>
+          <p style="margin-top:10px">No active engagement on this account yet. When we start work together, status, milestones and files will live here.</p>
+        </div>
+        <div class="dash-card">
+          <div class="k">RESPONSE TIME</div>
+          <div class="stat-v">1 day</div>
+          <p style="margin-top:10px">Every enquiry gets a reply within one working day - usually much faster.</p>
+        </div>
+
+        <div class="dash-card wide">
+          <div class="k">WHAT'S NEW AT STACKNITY.AI</div>
+          <ul>
+            <li><b style="color:var(--white)">September 2026 - Website live:</b> the full stacknity.ai site is up - services, the 12-problem library, client accounts and this dashboard.</li>
+            <li><b style="color:var(--white)">Problems We Solve:</b> twelve well-documented business problems with Stacknity's solution architecture for each - read them under <a href="problems.html" style="color:var(--cyan);font-weight:600">Problems</a>.</li>
+            <li><b style="color:var(--white)">Client accounts:</b> sign-in is now live. Project workspaces for active engagements land here next.</li>
+          </ul>
+        </div>
+
+        <div class="dash-card wide">
+          <div class="k">QUICK ACTIONS</div>
+          <p>Describe the problem slowing your team down, or browse what we do.</p>
+          <div class="dash-actions">
+            <a href="contact.html" class="btn small">Start a project &#8599;</a>
+            <a href="services.html" class="btn ghost small">Browse services</a>
+            <a href="problems.html" class="btn ghost small">Problems we solve</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

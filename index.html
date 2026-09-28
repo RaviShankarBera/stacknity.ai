@@ -8,241 +8,41 @@
 <meta property="og:title" content="Stacknity.ai - Problem First. AI Second.">
 <meta property="og:description" content="AI should start with a business problem, not a list of tools. AI consulting, LLM fine-tuning, agentic systems and AI engineers on demand.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://stacknity.ai">
 <meta property="og:image" content="mascot-robot.webp">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23081410'/%3E%3Ccircle cx='32' cy='32' r='12' fill='none' stroke='%238cffc0' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%238cffc0'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#081410;
-  --bg-deep:#04100a;
-  --card:rgba(14,36,24,.55);
-  --card-solid:#0e2418;
-  --line:rgba(140,255,192,.14);
-  --line-strong:rgba(140,255,192,.35);
-  --cyan:#8cffc0;
-  --cyan-bright:#4dffa6;
-  --blue:#16a34a;
-  --green:#34d399;
-  --white:#f2fff8;
-  --muted:#8fb3a2;
-  --mono:'JetBrains Mono',ui-monospace,monospace;
-  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--white);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(140,255,192,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(140,255,192,.04) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0}
-::selection{background:var(--cyan);color:var(--bg)}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
-.grad{background:linear-gradient(100deg,var(--cyan) 10%,var(--cyan-bright) 45%,var(--blue) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
-
-/* ---------- nav ---------- */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,border-color .35s;border-bottom:1px solid transparent}
-nav.scrolled{background:rgba(4,16,10,.85);backdrop-filter:blur(16px);border-bottom-color:var(--line)}
-.nav-inner{max-width:1180px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
-.logo .dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
-.nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted)}
-.nav-links a{transition:color .2s}
-.nav-links a:hover{color:var(--cyan)}
-.btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(100deg,var(--cyan),var(--cyan-bright));color:#04301e;font-weight:800;font-size:15px;padding:15px 28px;border-radius:12px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;letter-spacing:-.01em}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(77,255,166,.4)}
-.btn.small{padding:11px 22px;font-size:13.5px}
-.btn.ghost{background:transparent;color:var(--white);border:1px solid var(--line-strong)}
-.btn.ghost:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 24px rgba(140,255,192,.15)}
-
-/* ---------- hero ---------- */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:140px 0 80px;overflow:hidden}
-#net{position:absolute;inset:0;width:100%;height:100%}
-.hero::before{content:'';position:absolute;inset:0;background:
-  radial-gradient(760px 520px at 78% 20%,rgba(77,255,166,.12),transparent 65%),
-  radial-gradient(900px 640px at 8% 95%,rgba(22,163,74,.1),transparent 60%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;position:relative;z-index:2}
-.badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--cyan);border:1px solid var(--line-strong);border-radius:999px;padding:9px 20px;margin-bottom:30px;background:rgba(140,255,192,.05)}
-.badge .live{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
-@keyframes pulse{50%{opacity:.4}}
-h1{font-size:clamp(46px,7.2vw,96px);font-weight:900;line-height:1.0;letter-spacing:-.035em;text-transform:uppercase}
-.hero-sub{margin-top:28px;font-size:clamp(18px,2vw,22px);color:var(--cyan);font-weight:500;line-height:1.5}
-.hero-copy{margin-top:18px;font-size:16px;line-height:1.75;color:var(--muted);max-width:540px}
-.hero-cta{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap}
-.hero-micro{margin-top:26px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted);display:flex;gap:22px;flex-wrap:wrap}
-.hero-micro b{color:var(--green);font-weight:500}
-
-/* hero visual: mascot + HUD */
-.hero-visual{position:relative;display:flex;flex-direction:column;align-items:center;gap:0}
-.mascot{width:min(340px,72%);mix-blend-mode:screen;animation:float 6s ease-in-out infinite;filter:drop-shadow(0 20px 60px rgba(77,255,166,.25));position:relative;z-index:2}
-@keyframes float{50%{transform:translateY(-18px) rotate(1.5deg)}}
-.hud{width:100%;max-width:400px;margin-top:-46px;background:var(--card);border:1px solid var(--line);border-radius:16px;backdrop-filter:blur(14px);padding:20px 22px;position:relative;z-index:3;box-shadow:0 24px 60px rgba(0,0,0,.45)}
-.hud-head{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--muted);margin-bottom:16px}
-.hud-head b{color:var(--green);display:flex;align-items:center;gap:7px;font-weight:500}
-.hud-head b::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
-.hud-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.hud-stat{background:rgba(4,16,10,.6);border:1px solid var(--line);border-radius:10px;padding:12px 10px;text-align:center}
-.hud-stat .v{font-size:20px;font-weight:900;letter-spacing:-.02em;color:var(--cyan)}
-.hud-stat .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--muted);margin-top:5px}
-
-/* ---------- marquee ---------- */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-deep);overflow:hidden;padding:18px 0;white-space:nowrap;position:relative;z-index:1}
-.marquee-track{display:inline-block;animation:slide 30s linear infinite}
-.marquee span{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.22em;color:var(--muted);margin:0 30px}
-.marquee span b{color:var(--cyan);font-weight:700}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* ---------- sections ---------- */
-section{padding:110px 0;position:relative;z-index:1}
-.eyebrow{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--cyan);margin-bottom:24px;display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:'';width:30px;height:1px;background:var(--cyan)}
-h2{font-size:clamp(34px,4.8vw,58px);font-weight:900;line-height:1.05;letter-spacing:-.03em;text-transform:uppercase}
-.lead{font-size:18px;line-height:1.75;color:var(--muted);max-width:620px}
-
-/* manifesto */
-.manifesto{background:var(--bg-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;overflow:hidden}
-.manifesto .orb{position:absolute;width:min(300px,34vw);right:4%;top:50%;transform:translateY(-50%);mix-blend-mode:screen;opacity:.85;animation:orbfloat 9s ease-in-out infinite;pointer-events:none;filter:drop-shadow(0 0 50px rgba(77,255,166,.2))}
-@keyframes orbfloat{50%{transform:translateY(-58%) rotate(4deg)}}
-@media(max-width:960px){.manifesto .orb{position:static;transform:none;display:block;margin:0 auto 30px;width:min(220px,60vw);animation:none}}
-.manifesto .wrap{position:relative;z-index:1}
-.manifesto blockquote{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.25;letter-spacing:-.02em;max-width:900px;margin:0 auto}
-.manifesto p{margin:32px auto 0}
-
-/* approach: mac window + steps */
-.approach-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center;margin-top:64px}
-.macwin{background:#0a1c12;border:1px solid var(--line-strong);border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px rgba(140,255,192,.06),0 30px 80px rgba(0,0,0,.5),0 0 60px rgba(77,255,166,.08);transform:perspective(1200px) rotateY(-4deg);transition:transform .5s}
-.macwin:hover{transform:perspective(1200px) rotateY(0deg)}
-.macbar{display:flex;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid var(--line);background:rgba(4,16,10,.7)}
-.macbar i{width:11px;height:11px;border-radius:50%;display:block}
-.macbar i:nth-child(1){background:#ff5f57}.macbar i:nth-child(2){background:#febc2e}.macbar i:nth-child(3){background:#28c840}
-.macbar span{margin-left:10px;font-family:var(--mono);font-size:12px;color:var(--green);letter-spacing:.05em}
-.macbody{padding:24px 22px;font-family:var(--mono);font-size:13px;line-height:2.05;color:var(--muted)}
-.macbody .c{color:var(--cyan)}
-.macbody .g{color:var(--green)}
-.macbody .dim{opacity:.55}
-.macbody .step-row{display:flex;gap:12px;align-items:baseline}
-.macbody .fit{background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.4);color:var(--green);font-size:10px;letter-spacing:.12em;padding:2px 9px;border-radius:5px;margin-left:auto;white-space:nowrap}
-.steps{display:flex;flex-direction:column;gap:18px}
-.step{display:flex;gap:22px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;backdrop-filter:blur(10px);transition:transform .3s,border-color .3s}
-.step:hover{transform:translateX(8px);border-color:var(--line-strong)}
-.step .num{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--cyan);padding-top:3px}
-.step h3{font-size:18px;font-weight:800;margin-bottom:7px;letter-spacing:-.01em}
-.step p{font-size:14.5px;line-height:1.65;color:var(--muted)}
-
-/* services */
-.services{background:var(--bg-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:64px}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:38px 34px;backdrop-filter:blur(10px);transition:border-color .3s,box-shadow .3s;transform-style:preserve-3d;will-change:transform}
-.svc:hover{border-color:var(--line-strong);box-shadow:0 24px 60px rgba(0,0,0,.4),0 0 40px rgba(77,255,166,.07)}
-.svc .tag{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--cyan);margin-bottom:20px;display:flex;align-items:center;gap:9px}
-.svc .tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
-.svc h3{font-size:24px;font-weight:800;letter-spacing:-.015em;margin-bottom:13px}
-.svc p{font-size:15px;line-height:1.7;color:var(--muted)}
-.svc ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:9px}
-.svc li{font-size:13.5px;color:var(--muted);display:flex;gap:10px;align-items:baseline}
-.svc li::before{content:'✓';color:var(--green);font-weight:700}
-
-
-/* problems we solve */
-.problems{background:var(--bg)}
-.prob-intro{max-width:760px;margin-top:26px;font-size:16.5px;line-height:1.75;color:var(--muted)}
-.prob-intro b{color:var(--white);font-weight:700}
-.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
-.prob{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 26px;backdrop-filter:blur(10px);transition:border-color .3s,box-shadow .3s}
-.prob:hover{border-color:var(--line-strong);box-shadow:0 20px 50px rgba(0,0,0,.35),0 0 34px rgba(77,255,166,.06)}
-.prob-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-.prob-num{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--cyan)}
-.prob-ind{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--cyan);border:1px solid var(--line-strong);border-radius:999px;padding:5px 12px;background:rgba(140,255,192,.04);white-space:nowrap}
-.prob h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin-bottom:10px}
-.prob p{font-size:13.5px;line-height:1.65;color:var(--muted)}
-.prob-build{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.18em;color:var(--green);margin:18px 0 10px;display:flex;align-items:center;gap:8px}
-.prob-build::before{content:'';width:14px;height:1px;background:var(--green)}
-.prob ul{list-style:none;display:flex;flex-direction:column;gap:7px}
-.prob li{font-size:12.5px;line-height:1.55;color:var(--muted);display:flex;gap:9px;align-items:baseline}
-.prob li::before{content:'\2192';color:var(--cyan);font-weight:700;font-family:var(--mono)}
-
-/* about */
-.about-grid{display:grid:grid-template-columns:1.1fr .9fr;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;margin-top:20px}
-.about-copy p{font-size:16.5px;line-height:1.8;color:var(--muted);margin-bottom:18px}
-.about-copy p b{color:var(--white);font-weight:700}
-.chips{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
-.chip{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--cyan);border:1px solid var(--line-strong);border-radius:999px;padding:8px 17px;background:rgba(140,255,192,.04)}
-.founder-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px 36px;backdrop-filter:blur(12px);position:sticky;top:110px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
-.founder-card .avatar{width:78px;height:78px;border-radius:20px;background:linear-gradient(135deg,var(--cyan),var(--blue));display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:900;color:#04301e;margin-bottom:24px;letter-spacing:-.03em;box-shadow:0 0 34px rgba(77,255,166,.35)}
-.founder-card .name{font-size:24px;font-weight:900;letter-spacing:-.02em}
-.founder-card .role{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--cyan);margin:9px 0 22px}
-.founder-card .facts{list-style:none}
-.founder-card .facts li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
-.founder-card .facts li b{color:var(--white);font-weight:600;text-align:right}
-.linkedin-link{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:14px;font-weight:700;color:var(--cyan)}
-.linkedin-link:hover{text-decoration:underline}
-
-/* contact */
-.contact{background:var(--bg-deep);border-top:1px solid var(--line);position:relative;overflow:hidden}
-.contact::before{content:'';position:absolute;left:50%;top:-240px;transform:translateX(-50%);width:820px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(77,255,166,.08),transparent 65%);pointer-events:none}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;position:relative;z-index:1}
-.contact-copy h2{margin-bottom:26px}
-.contact-note{margin-top:26px;font-size:14px;line-height:1.7;color:var(--muted);max-width:420px}
-.contact-note a{color:var(--cyan);font-weight:600}
-.form-win{background:#0a1c12;border:1px solid var(--line-strong);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 50px rgba(77,255,166,.06)}
-form{padding:26px 24px;display:flex;flex-direction:column;gap:16px}
-.field label{display:block;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--muted);margin-bottom:8px}
-.field input,.field textarea{width:100%;background:rgba(4,16,10,.7);border:1px solid var(--line);border-radius:10px;color:var(--white);font-family:var(--sans);font-size:14.5px;padding:13px 16px;outline:none;transition:border-color .2s,box-shadow .2s;resize:vertical}
-.field input:focus,.field textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(140,255,192,.15),0 0 20px rgba(140,255,192,.1)}
-.field textarea{min-height:120px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-form .btn{align-self:flex-start;margin-top:4px}
-
-/* footer */
-footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index:1}
-.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:22px}
-.foot .tagline{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--muted);margin-top:8px}
-.foot-right{display:flex;align-items:center;gap:26px;font-size:13px;color:var(--muted)}
-.foot-right a:hover{color:var(--cyan)}
-
-/* reveal */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
-.reveal.in{opacity:1;transform:none}
-.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
-
-@media(max-width:960px){
-  .hero-grid{grid-template-columns:1fr;gap:60px}
-  .approach-grid{grid-template-columns:1fr}
-  .svc-grid{grid-template-columns:1fr}
-  .prob-grid{grid-template-columns:1fr 1fr}
-  .about-grid{grid-template-columns:1fr}
-  .founder-card{position:static}
-  .contact-grid{grid-template-columns:1fr;gap:48px}
-  .nav-links{display:none}
-  section{padding:84px 0}
-  .mascot{width:min(280px,64%)}
-}
-@media(max-width:560px){
-  .prob-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  .hero{padding:120px 0 70px}
-  nav .btn{display:none}
-  .badge{font-size:10px;letter-spacing:.12em;padding:8px 14px}
-  .badge-loc{display:none}
-  .hud-stats{grid-template-columns:repeat(3,1fr)}
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#top" class="logo"><span class="dot"></span>STACKNITY<span class="grad">.AI</span></a>
+    <a href="index.html" class="logo"><span class="dot"></span>STACKNITY<span class="grad">.AI</span></a>
     <div class="nav-links">
-      <a href="#approach">Approach</a>
-      <a href="#services">Services</a>
-      <a href="#problems">Problems</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="services.html">Services</a>
+      <a href="problems.html">Problems</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="nav-login">Client login</a>
     </div>
-    <a href="#contact" class="btn small">Start a project &#8599;</a>
+    <div class="nav-right">
+      <a href="contact.html" class="btn small">Start a project &#8599;</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="problems.html">Problems We Solve</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="login.html">Client login</a>
+  <a href="signup.html">Create account</a>
+  <a href="contact.html" class="btn">Start a project &#8599;</a>
+</div>
 
 <header class="hero" id="top">
   <canvas id="net"></canvas>
@@ -253,8 +53,8 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
       <p class="hero-sub reveal d2">Map the workflow. Choose the right AI. Build, measure, improve.</p>
       <p class="hero-copy reveal d3">Most AI projects fail because they start with a tool. We start with the work. Stacknity.ai sits with your team, finds the day-to-day problems slowing you down, and automates the steps where AI actually pays off.</p>
       <div class="hero-cta reveal d4">
-        <a href="#contact" class="btn">Tell us your problem &#8599;</a>
-        <a href="#approach" class="btn ghost">How we work</a>
+        <a href="contact.html" class="btn">Tell us your problem &#8599;</a>
+        <a href="services.html" class="btn ghost">What we do</a>
       </div>
       <p class="hero-micro reveal d4"><span><b>&#9679;</b>&nbsp; REPLIES WITHIN ONE WORKING DAY</span><span><b>&#9679;</b>&nbsp; NO TOOL LIST, NO HYPE</span></p>
     </div>
@@ -265,7 +65,7 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
         <div class="hud-stats">
           <div class="hud-stat"><div class="v">8+</div><div class="k">YEARS</div></div>
           <div class="hud-stat"><div class="v">04</div><div class="k">SERVICES</div></div>
-          <div class="hud-stat"><div class="v">IST</div><div class="k">BENGALURU</div></div>
+          <div class="hud-stat"><div class="v">12</div><div class="k">PROBLEMS MAPPED</div></div>
         </div>
       </div>
     </div>
@@ -333,26 +133,25 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
         <div class="tag">CONSULTING</div>
         <h3>AI Consulting</h3>
         <p>We consult on the day-to-day problems slowing your team: find the real problem, decide where AI fits, design the workflow, then automate the process. Advice you can act on, not a slide deck.</p>
-        <ul><li>Workflow audit of day-to-day operations</li><li>AI fit analysis per step</li><li>Automation design and rollout</li></ul>
       </div>
       <div class="svc reveal d2">
         <div class="tag">CUSTOM MODELS</div>
         <h3>LLM Training &amp; Fine-Tuning</h3>
         <p>Custom-trained and fine-tuned language models at low cost, so the AI speaks your business: your documents, your tone, your edge cases, instead of generic answers from the internet.</p>
-        <ul><li>Low-cost training runs</li><li>Fine-tuned on your data</li><li>Evaluated before it ships</li></ul>
       </div>
       <div class="svc reveal d3">
         <div class="tag">AGENTIC SYSTEMS</div>
         <h3>Multi-Agent AI</h3>
         <p>Agentic AI systems built on LangGraph and LangChain: multiple agents that plan, act and hand work to each other across your tools, with a human in charge of the final call.</p>
-        <ul><li>LangGraph and LangChain builds</li><li>Agents wired into your tools</li><li>Human-in-the-loop by design</li></ul>
       </div>
       <div class="svc reveal d4">
         <div class="tag">TALENT ON DEMAND</div>
         <h3>AI Engineers, Deployed</h3>
         <p>AI engineers, RAG specialists and forward-deployed engineers (FDEs), placed per your project requirements. The right specialist inside your team, for exactly as long as you need them.</p>
-        <ul><li>AI engineers per project needs</li><li>RAG specialists</li><li>Forward-deployed engineers</li></ul>
       </div>
+    </div>
+    <div class="section-more reveal d2">
+      <a href="services.html" class="btn ghost">Explore all services &#8599;</a>
     </div>
   </div>
 </section>
@@ -361,7 +160,7 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
   <div class="wrap">
     <div class="eyebrow reveal">04 / PROBLEMS WE SOLVE</div>
     <h2 class="reveal d1">Real problems.<br><span class="grad">Working systems.</span></h2>
-    <p class="prob-intro reveal d2">Well-documented, everyday business problems across industries - the kind Stacknity.ai exists to fix. For each one: how we map the workflow and where AI actually earns its place. <b>Client work stays confidential; the approach doesn't.</b></p>
+    <p class="prob-intro reveal d2">Well-documented, everyday business problems across industries - the kind Stacknity.ai exists to fix. <b>Client work stays confidential; the approach doesn't.</b></p>
     <div class="prob-grid">
       <div class="prob reveal d1">
         <div class="prob-top"><span class="prob-num">01</span><span class="prob-ind">CONFIDENTIAL &middot; LOGISTICS</span></div>
@@ -371,82 +170,22 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
         <ul><li>Audit the delivery-to-invoice workflow first</li><li>Extraction pipeline reads PODs and validates them against orders</li><li>Exceptions go to a human; clean documents bill the same day</li></ul>
       </div>
       <div class="prob reveal d2">
-        <div class="prob-top"><span class="prob-num">02</span><span class="prob-ind">CONFIDENTIAL &middot; HEALTHCARE</span></div>
-        <h3>Prior authorizations eat clinical hours</h3>
-        <p>Staff re-read payer policy documents and re-enter the same patient details for every authorization request.</p>
-        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
-        <ul><li>RAG over payer policies and patient records</li><li>Draft authorization packets with citations to the exact policy clause</li><li>A clinician approves every submission before it leaves</li></ul>
-      </div>
-      <div class="prob reveal d3">
         <div class="prob-top"><span class="prob-num">03</span><span class="prob-ind">CONFIDENTIAL &middot; E-COMMERCE</span></div>
         <h3>Support tickets outgrow the team</h3>
         <p>Order status, returns and refund questions bury the support team, and response time slips as volume grows.</p>
         <div class="prob-build">HOW STACKNITY SOLVES IT</div>
         <ul><li>Classify and route every incoming ticket</li><li>RAG answers grounded in store policies and live order data</li><li>Humans keep refunds, disputes and edge cases</li></ul>
       </div>
-      <div class="prob reveal d1">
-        <div class="prob-top"><span class="prob-num">04</span><span class="prob-ind">CONFIDENTIAL &middot; MANUFACTURING</span></div>
-        <h3>Downtime reports written from memory</h3>
-        <p>Maintenance and quality data lives in logbooks and spreadsheets, so root-cause analysis starts from zero after every breakdown.</p>
-        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
-        <ul><li>Structure machine, shift and inspection data in one place</li><li>Agents draft shift and root-cause reports straight from the logs</li><li>An engineer signs off; the history stays searchable forever</li></ul>
-      </div>
-      <div class="prob reveal d2">
-        <div class="prob-top"><span class="prob-num">05</span><span class="prob-ind">CONFIDENTIAL &middot; FINANCE</span></div>
-        <h3>Invoice matching is a full-time job</h3>
-        <p>Three-way matching across purchase orders, receipts and invoices is manual, and month-end close drags for days.</p>
-        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
-        <ul><li>Extraction fine-tuned on the company's invoice formats</li><li>A matching agent reconciles PO, receipt and invoice line by line</li><li>Only mismatches reach a human reviewer</li></ul>
-      </div>
       <div class="prob reveal d3">
-        <div class="prob-top"><span class="prob-num">06</span><span class="prob-ind">CONFIDENTIAL &middot; INSURANCE</span></div>
-        <h3>Claims intake is copy-paste work</h3>
-        <p>First-notice documents, photos and forms get re-keyed into the claims system before triage can even start.</p>
-        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
-        <ul><li>Intake agents read submissions and extract the entities that matter</li><li>Score and route each claim to the right adjuster</li><li>A full audit trail on every automated step</li></ul>
-      </div>
-      <div class="prob reveal d1">
         <div class="prob-top"><span class="prob-num">07</span><span class="prob-ind">CONFIDENTIAL &middot; LEGAL</span></div>
         <h3>Contracts reviewed line by line</h3>
         <p>Every NDA and vendor agreement needs the same clause checks, and renewal dates get missed in shared drives.</p>
         <div class="prob-build">HOW STACKNITY SOLVES IT</div>
         <ul><li>Extraction fine-tuned for the firm's clause patterns</li><li>RAG answers with citations to the exact clause text</li><li>The reviewer decides; the system tracks every date</li></ul>
       </div>
-      <div class="prob reveal d2">
-        <div class="prob-top"><span class="prob-num">08</span><span class="prob-ind">CONFIDENTIAL &middot; SAAS</span></div>
-        <h3>Regression suites grow faster than QA</h3>
-        <p>Every release adds more tests, failures take hours to triage, and flaky tests quietly erode trust in the suite.</p>
-        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
-        <ul><li>Agents generate and maintain test cases from real user flows</li><li>Failure triage that separates real bugs from flakes, with evidence</li><li>QA reviews a short diagnosis instead of raw logs</li></ul>
-      </div>
-      <div class="prob reveal d3">
-        <div class="prob-top"><span class="prob-num">09</span><span class="prob-ind">CONFIDENTIAL &middot; REAL ESTATE</span></div>
-        <h3>Leads go cold in the inbox</h3>
-        <p>Enquiries arrive across portals and WhatsApp, and follow-up depends on whoever remembers to reply first.</p>
-        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
-        <ul><li>An agent engages and qualifies every lead within minutes</li><li>Site visits booked straight into the sales calendar</li><li>The CRM stays current and hot leads reach a human fast</li></ul>
-      </div>
-      <div class="prob reveal d1">
-        <div class="prob-top"><span class="prob-num">10</span><span class="prob-ind">CONFIDENTIAL &middot; STAFFING</span></div>
-        <h3>Resume screening drowns recruiters</h3>
-        <p>Hundreds of applications per role, and the scheduling back-and-forth eats the rest of the week.</p>
-        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
-        <ul><li>Structured screening against role criteria, not keyword bingo</li><li>Scheduling agents handle the calendar ping-pong</li><li>Recruiters spend their time on the shortlist, not the pile</li></ul>
-      </div>
-      <div class="prob reveal d2">
-        <div class="prob-top"><span class="prob-num">11</span><span class="prob-ind">CONFIDENTIAL &middot; FINTECH</span></div>
-        <h3>KYC verification is a bottleneck</h3>
-        <p>Documents are checked by hand, mismatches bounce back and forth, and audits ask for evidence months later.</p>
-        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
-        <ul><li>Extraction and verification pipeline for identity documents</li><li>Automated cross-checks with a complete audit trail</li><li>Compliance reviews only the flagged cases</li></ul>
-      </div>
-      <div class="prob reveal d3">
-        <div class="prob-top"><span class="prob-num">12</span><span class="prob-ind">CONFIDENTIAL &middot; EDUCATION</span></div>
-        <h3>Content and queries scale with students</h3>
-        <p>Course material takes weeks to build, and the same student questions arrive every single term.</p>
-        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
-        <ul><li>RAG over the curriculum answers questions with citations</li><li>Agents draft new material from approved source content</li><li>Faculty edits and approves everything before it ships</li></ul>
-      </div>
+    </div>
+    <div class="section-more reveal d2">
+      <a href="problems.html" class="btn ghost">See all 12 problems &#8599;</a>
     </div>
   </div>
 </section>
@@ -459,12 +198,14 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
       <div class="about-copy reveal d2">
         <p><b>Ravi Shankar Bera</b> has been building for the web since 2018. He founded <b>Stacknity Technologies</b>, a Bengaluru agency that ships websites, mobile apps and digital marketing for growing teams, and he still runs it as Founder &amp; CEO.</p>
         <p>He holds a <b>B.Tech in Computer Science</b> and an <b>LLB</b>, an uncommon pairing that shapes how Stacknity.ai works: engineer the system properly, and be honest about what it should and should not do.</p>
-        <p>Stacknity.ai is the next step. The same build-first mindset his agency has applied for eight years, now pointed at the question every company is asking: where does AI actually help us?</p>
         <div class="chips">
           <span class="chip">EST. 2018</span>
           <span class="chip">BENGALURU, INDIA</span>
           <span class="chip">B.TECH CSE + LLB</span>
           <span class="chip">FOUNDER-LED</span>
+        </div>
+        <div class="section-more">
+          <a href="about.html" class="btn ghost">More about Stacknity &#8599;</a>
         </div>
       </div>
       <div class="founder-card reveal d3">
@@ -484,133 +225,51 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="cta-band">
   <div class="wrap">
-    <div class="eyebrow reveal">06 / START A CONVERSATION</div>
-    <div class="contact-grid">
-      <div class="contact-copy">
-        <h2 class="reveal d1">Bring us<br><span class="grad">the problem.</span></h2>
-        <p class="lead reveal d2">Tell us what is slowing your team down. We will come back with how we would approach it, before any talk of tools or contracts.</p>
-        <p class="contact-note reveal d3">Prefer email? Write to us directly at <a href="mailto:stacknity.technologies@gmail.com">stacknity.technologies@gmail.com</a>. We reply within one working day.</p>
-      </div>
-      <div class="form-win reveal d2">
-        <div class="macbar"><i></i><i></i><i></i><span>new enquiry</span></div>
-        <form id="contact-form">
-          <div class="form-row">
-            <div class="field">
-              <label for="cf-name">YOUR NAME</label>
-              <input id="cf-name" type="text" required autocomplete="name">
-            </div>
-            <div class="field">
-              <label for="cf-company">COMPANY</label>
-              <input id="cf-company" type="text" autocomplete="organization">
-            </div>
-          </div>
-          <div class="field">
-            <label for="cf-email">WORK EMAIL</label>
-            <input id="cf-email" type="email" required autocomplete="email">
-          </div>
-          <div class="field">
-            <label for="cf-msg">WHAT IS SLOWING YOUR TEAM DOWN?</label>
-            <textarea id="cf-msg" required></textarea>
-          </div>
-          <button type="submit" class="btn">Send the problem &#8599;</button>
-        </form>
-      </div>
-    </div>
+    <div class="eyebrow reveal" style="justify-content:center">06 / START A CONVERSATION</div>
+    <h2 class="reveal d1">Bring us <span class="grad">the problem.</span></h2>
+    <p class="lead reveal d2">Tell us what is slowing your team down. We will come back with how we would approach it, before any talk of tools or contracts.</p>
+    <a href="contact.html" class="btn reveal d3">Start a project &#8599;</a>
   </div>
 </section>
 
 <footer>
-  <div class="wrap foot">
-    <div>
-      <div class="logo"><span class="dot"></span>STACKNITY<span class="grad">.AI</span></div>
-      <div class="tagline">PROBLEM FIRST. AI SECOND.</div>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo"><span class="dot"></span>STACKNITY<span class="grad">.AI</span></div>
+        <div class="tagline">PROBLEM FIRST. AI SECOND.</div>
+        <p class="foot-note">AI consulting, LLM fine-tuning, agentic systems and AI engineers on demand. A Stacknity Technologies venture, Bengaluru, India.</p>
+      </div>
+      <div class="foot-col">
+        <div class="foot-head">COMPANY</div>
+        <a href="services.html">Services</a>
+        <a href="problems.html">Problems we solve</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <div class="foot-head">ACCOUNT</div>
+        <a href="login.html">Client login</a>
+        <a href="signup.html">Create account</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+      <div class="foot-col">
+        <div class="foot-head">LEGAL &amp; SOCIAL</div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="mailto:stacknity.technologies@gmail.com">Email us</a>
+        <a href="https://www.linkedin.com/in/ravishankarbera" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
-    <div class="foot-right">
+    <div class="foot-base">
       <span>Bengaluru, India</span>
-      <a href="https://www.linkedin.com/in/ravishankarbera" target="_blank" rel="noopener">LinkedIn</a>
       <span>&copy; 2026 Stacknity.ai, a Stacknity Technologies venture</span>
     </div>
   </div>
 </footer>
 
-<script>
-// neural network canvas
-(function(){
-  var c=document.getElementById('net'),x=c.getContext('2d'),W,H,P=[],mouse={x:-9999,y:-9999};
-  function size(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;spawn();}
-  function spawn(){
-    P=[];
-    var N=window.innerWidth<700?45:Math.min(140,Math.round(W*H/16000));
-    for(var i=0;i<N;i++){P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.7+.7});}
-  }
-  size();window.addEventListener('resize',size);
-  document.querySelector('.hero').addEventListener('mousemove',function(e){var b=c.getBoundingClientRect();mouse.x=e.clientX-b.left;mouse.y=e.clientY-b.top;});
-  document.querySelector('.hero').addEventListener('mouseleave',function(){mouse.x=-9999;mouse.y=-9999;});
-  function tick(){
-    x.clearRect(0,0,W,H);
-    for(var i=0;i<P.length;i++){
-      var p=P[i];
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
-      var dx=p.x-mouse.x,dy=p.y-mouse.y,dm=Math.sqrt(dx*dx+dy*dy);
-      if(dm<130&&dm>0.01){p.x+=dx/dm;p.y+=dy/dm;}
-    }
-    for(var i=0;i<P.length;i++){
-      for(var j=i+1;j<P.length;j++){
-        var dx=P[i].x-P[j].x,dy=P[i].y-P[j].y,d=Math.sqrt(dx*dx+dy*dy);
-        if(d<160){x.strokeStyle='rgba(140,255,192,'+(0.16*(1-d/160))+')';x.lineWidth=1;x.beginPath();x.moveTo(P[i].x,P[i].y);x.lineTo(P[j].x,P[j].y);x.stroke();}
-      }
-    }
-    for(var i=0;i<P.length;i++){var p=P[i];x.fillStyle='rgba(140,255,192,.55)';x.beginPath();x.arc(p.x,p.y,p.r,0,6.2832);x.fill();}
-    requestAnimationFrame(tick);
-  }
-  tick();
-})();
-
-// nav scroll state
-var nav=document.getElementById('nav');
-window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
-
-// reveal on scroll
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-
-// duplicate marquee for seamless loop
-var mq=document.getElementById('marquee');mq.innerHTML+=mq.innerHTML;
-
-// hero parallax on mascot + HUD
-(function(){
-  var visual=document.getElementById('hero-visual'),mascot=document.getElementById('mascot');
-  if(!visual||!mascot)return;
-  document.querySelector('.hero').addEventListener('mousemove',function(e){
-    var cx=(e.clientX/window.innerWidth-.5),cy=(e.clientY/window.innerHeight-.5);
-    mascot.style.transform='translate('+(cx*22)+'px,'+(cy*18)+'px)';
-  });
-})();
-
-// 3D tilt on service cards
-document.querySelectorAll('.svc').forEach(function(card){
-  card.addEventListener('mousemove',function(e){
-    var b=card.getBoundingClientRect();
-    var rx=((e.clientY-b.top)/b.height-.5)*-7,ry=((e.clientX-b.left)/b.width-.5)*9;
-    card.style.transform='perspective(900px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-4px)';
-  });
-  card.addEventListener('mouseleave',function(){card.style.transform='perspective(900px) rotateX(0deg) rotateY(0deg)';});
-});
-
-// contact form -> mailto compose
-document.getElementById('contact-form').addEventListener('submit',function(e){
-  e.preventDefault();
-  var name=document.getElementById('cf-name').value.trim();
-  var company=document.getElementById('cf-company').value.trim();
-  var email=document.getElementById('cf-email').value.trim();
-  var msg=document.getElementById('cf-msg').value.trim();
-  var subject='Website enquiry from '+name+(company?' ('+company+')':'');
-  var body='Name: '+name+'\nCompany: '+(company||'-')+'\nEmail: '+email+'\n\nThe problem slowing our team down:\n'+msg;
-  window.location.href='mailto:stacknity.technologies@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-});
-</script>
+<script src="site.js"></script>
 </body>
 </html>
