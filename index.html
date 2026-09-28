@@ -142,6 +142,25 @@ h2{font-size:clamp(34px,4.8vw,58px);font-weight:900;line-height:1.05;letter-spac
 .svc li{font-size:13.5px;color:var(--muted);display:flex;gap:10px;align-items:baseline}
 .svc li::before{content:'✓';color:var(--green);font-weight:700}
 
+
+/* problems we solve */
+.problems{background:var(--bg)}
+.prob-intro{max-width:760px;margin-top:26px;font-size:16.5px;line-height:1.75;color:var(--muted)}
+.prob-intro b{color:var(--white);font-weight:700}
+.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
+.prob{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 26px;backdrop-filter:blur(10px);transition:border-color .3s,box-shadow .3s}
+.prob:hover{border-color:var(--line-strong);box-shadow:0 20px 50px rgba(0,0,0,.35),0 0 34px rgba(77,255,166,.06)}
+.prob-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+.prob-num{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--cyan)}
+.prob-ind{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--cyan);border:1px solid var(--line-strong);border-radius:999px;padding:5px 12px;background:rgba(140,255,192,.04);white-space:nowrap}
+.prob h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin-bottom:10px}
+.prob p{font-size:13.5px;line-height:1.65;color:var(--muted)}
+.prob-build{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.18em;color:var(--green);margin:18px 0 10px;display:flex;align-items:center;gap:8px}
+.prob-build::before{content:'';width:14px;height:1px;background:var(--green)}
+.prob ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.prob li{font-size:12.5px;line-height:1.55;color:var(--muted);display:flex;gap:9px;align-items:baseline}
+.prob li::before{content:'\2192';color:var(--cyan);font-weight:700;font-family:var(--mono)}
+
 /* about */
 .about-grid{display:grid:grid-template-columns:1.1fr .9fr;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;margin-top:20px}
 .about-copy p{font-size:16.5px;line-height:1.8;color:var(--muted);margin-bottom:18px}
@@ -190,6 +209,7 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
   .hero-grid{grid-template-columns:1fr;gap:60px}
   .approach-grid{grid-template-columns:1fr}
   .svc-grid{grid-template-columns:1fr}
+  .prob-grid{grid-template-columns:1fr 1fr}
   .about-grid{grid-template-columns:1fr}
   .founder-card{position:static}
   .contact-grid{grid-template-columns:1fr;gap:48px}
@@ -198,6 +218,7 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
   .mascot{width:min(280px,64%)}
 }
 @media(max-width:560px){
+  .prob-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .hero{padding:120px 0 70px}
   nav .btn{display:none}
@@ -215,6 +236,7 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
     <div class="nav-links">
       <a href="#approach">Approach</a>
       <a href="#services">Services</a>
+      <a href="#problems">Problems</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
@@ -335,9 +357,103 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
   </div>
 </section>
 
+<section class="problems" id="problems">
+  <div class="wrap">
+    <div class="eyebrow reveal">04 / PROBLEMS WE SOLVE</div>
+    <h2 class="reveal d1">Real problems.<br><span class="grad">Working systems.</span></h2>
+    <p class="prob-intro reveal d2">Well-documented, everyday business problems across industries - the kind Stacknity.ai exists to fix. For each one: how we map the workflow and where AI actually earns its place. <b>Client work stays confidential; the approach doesn't.</b></p>
+    <div class="prob-grid">
+      <div class="prob reveal d1">
+        <div class="prob-top"><span class="prob-num">01</span><span class="prob-ind">CONFIDENTIAL &middot; LOGISTICS</span></div>
+        <h3>Paper proof-of-delivery slows billing</h3>
+        <p>Delivery notes and lorry receipts arrive as WhatsApp photos and email attachments, while invoicing waits for someone to type them up.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Audit the delivery-to-invoice workflow first</li><li>Extraction pipeline reads PODs and validates them against orders</li><li>Exceptions go to a human; clean documents bill the same day</li></ul>
+      </div>
+      <div class="prob reveal d2">
+        <div class="prob-top"><span class="prob-num">02</span><span class="prob-ind">CONFIDENTIAL &middot; HEALTHCARE</span></div>
+        <h3>Prior authorizations eat clinical hours</h3>
+        <p>Staff re-read payer policy documents and re-enter the same patient details for every authorization request.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>RAG over payer policies and patient records</li><li>Draft authorization packets with citations to the exact policy clause</li><li>A clinician approves every submission before it leaves</li></ul>
+      </div>
+      <div class="prob reveal d3">
+        <div class="prob-top"><span class="prob-num">03</span><span class="prob-ind">CONFIDENTIAL &middot; E-COMMERCE</span></div>
+        <h3>Support tickets outgrow the team</h3>
+        <p>Order status, returns and refund questions bury the support team, and response time slips as volume grows.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Classify and route every incoming ticket</li><li>RAG answers grounded in store policies and live order data</li><li>Humans keep refunds, disputes and edge cases</li></ul>
+      </div>
+      <div class="prob reveal d1">
+        <div class="prob-top"><span class="prob-num">04</span><span class="prob-ind">CONFIDENTIAL &middot; MANUFACTURING</span></div>
+        <h3>Downtime reports written from memory</h3>
+        <p>Maintenance and quality data lives in logbooks and spreadsheets, so root-cause analysis starts from zero after every breakdown.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Structure machine, shift and inspection data in one place</li><li>Agents draft shift and root-cause reports straight from the logs</li><li>An engineer signs off; the history stays searchable forever</li></ul>
+      </div>
+      <div class="prob reveal d2">
+        <div class="prob-top"><span class="prob-num">05</span><span class="prob-ind">CONFIDENTIAL &middot; FINANCE</span></div>
+        <h3>Invoice matching is a full-time job</h3>
+        <p>Three-way matching across purchase orders, receipts and invoices is manual, and month-end close drags for days.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Extraction fine-tuned on the company's invoice formats</li><li>A matching agent reconciles PO, receipt and invoice line by line</li><li>Only mismatches reach a human reviewer</li></ul>
+      </div>
+      <div class="prob reveal d3">
+        <div class="prob-top"><span class="prob-num">06</span><span class="prob-ind">CONFIDENTIAL &middot; INSURANCE</span></div>
+        <h3>Claims intake is copy-paste work</h3>
+        <p>First-notice documents, photos and forms get re-keyed into the claims system before triage can even start.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Intake agents read submissions and extract the entities that matter</li><li>Score and route each claim to the right adjuster</li><li>A full audit trail on every automated step</li></ul>
+      </div>
+      <div class="prob reveal d1">
+        <div class="prob-top"><span class="prob-num">07</span><span class="prob-ind">CONFIDENTIAL &middot; LEGAL</span></div>
+        <h3>Contracts reviewed line by line</h3>
+        <p>Every NDA and vendor agreement needs the same clause checks, and renewal dates get missed in shared drives.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Extraction fine-tuned for the firm's clause patterns</li><li>RAG answers with citations to the exact clause text</li><li>The reviewer decides; the system tracks every date</li></ul>
+      </div>
+      <div class="prob reveal d2">
+        <div class="prob-top"><span class="prob-num">08</span><span class="prob-ind">CONFIDENTIAL &middot; SAAS</span></div>
+        <h3>Regression suites grow faster than QA</h3>
+        <p>Every release adds more tests, failures take hours to triage, and flaky tests quietly erode trust in the suite.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Agents generate and maintain test cases from real user flows</li><li>Failure triage that separates real bugs from flakes, with evidence</li><li>QA reviews a short diagnosis instead of raw logs</li></ul>
+      </div>
+      <div class="prob reveal d3">
+        <div class="prob-top"><span class="prob-num">09</span><span class="prob-ind">CONFIDENTIAL &middot; REAL ESTATE</span></div>
+        <h3>Leads go cold in the inbox</h3>
+        <p>Enquiries arrive across portals and WhatsApp, and follow-up depends on whoever remembers to reply first.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>An agent engages and qualifies every lead within minutes</li><li>Site visits booked straight into the sales calendar</li><li>The CRM stays current and hot leads reach a human fast</li></ul>
+      </div>
+      <div class="prob reveal d1">
+        <div class="prob-top"><span class="prob-num">10</span><span class="prob-ind">CONFIDENTIAL &middot; STAFFING</span></div>
+        <h3>Resume screening drowns recruiters</h3>
+        <p>Hundreds of applications per role, and the scheduling back-and-forth eats the rest of the week.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Structured screening against role criteria, not keyword bingo</li><li>Scheduling agents handle the calendar ping-pong</li><li>Recruiters spend their time on the shortlist, not the pile</li></ul>
+      </div>
+      <div class="prob reveal d2">
+        <div class="prob-top"><span class="prob-num">11</span><span class="prob-ind">CONFIDENTIAL &middot; FINTECH</span></div>
+        <h3>KYC verification is a bottleneck</h3>
+        <p>Documents are checked by hand, mismatches bounce back and forth, and audits ask for evidence months later.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Extraction and verification pipeline for identity documents</li><li>Automated cross-checks with a complete audit trail</li><li>Compliance reviews only the flagged cases</li></ul>
+      </div>
+      <div class="prob reveal d3">
+        <div class="prob-top"><span class="prob-num">12</span><span class="prob-ind">CONFIDENTIAL &middot; EDUCATION</span></div>
+        <h3>Content and queries scale with students</h3>
+        <p>Course material takes weeks to build, and the same student questions arrive every single term.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>RAG over the curriculum answers questions with citations</li><li>Agents draft new material from approved source content</li><li>Faculty edits and approves everything before it ships</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="about">
   <div class="wrap">
-    <div class="eyebrow reveal">04 / WHO IS BEHIND IT</div>
+    <div class="eyebrow reveal">05 / WHO IS BEHIND IT</div>
     <h2 class="reveal d1">Built by a builder.</h2>
     <div class="about-grid">
       <div class="about-copy reveal d2">
@@ -370,7 +486,7 @@ footer{border-top:1px solid var(--line);padding:52px 0;position:relative;z-index
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <div class="eyebrow reveal">05 / START A CONVERSATION</div>
+    <div class="eyebrow reveal">06 / START A CONVERSATION</div>
     <div class="contact-grid">
       <div class="contact-copy">
         <h2 class="reveal d1">Bring us<br><span class="grad">the problem.</span></h2>
