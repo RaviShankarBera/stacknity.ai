@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Problems We Solve - Stacknity.ai</title>
+<meta name="description" content="Twelve well-documented business problems across industries, and the Stacknity.ai solution architecture for each: workflow first, right AI fit, a human accountable.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23081410'/%3E%3Ccircle cx='32' cy='32' r='12' fill='none' stroke='%238cffc0' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%238cffc0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="canonical" href="https://ravishankarbera.github.io/stacknity.ai/problems.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Problems We Solve - Stacknity.ai">
+<meta property="og:description" content="Twelve well-documented business problems across industries, and the Stacknity.ai solution architecture for each: workflow first, right AI fit, a human accountable.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stacknity.ai">
+<meta property="og:url" content="https://ravishankarbera.github.io/stacknity.ai/problems.html">
+<meta property="og:image" content="https://ravishankarbera.github.io/stacknity.ai/mascot-robot.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Problems We Solve - Stacknity.ai">
+<meta name="twitter:description" content="Twelve well-documented business problems across industries, and the Stacknity.ai solution architecture for each: workflow first, right AI fit, a human accountable.">
+<meta name="twitter:image" content="https://ravishankarbera.github.io/stacknity.ai/mascot-robot.webp">
+<meta name="author" content="Ravi Shankar Bera">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="dot"></span>STACKNITY<span class="grad">.AI</span></a>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="problems.html" class="active">Problems</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="nav-login">Client login</a>
+    </div>
+    <div class="nav-right">
+      <a href="contact.html" class="btn small">Start a project &#8599;</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="problems.html">Problems We Solve</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="login.html">Client login</a>
+  <a href="signup.html">Create account</a>
+  <a href="contact.html" class="btn">Start a project &#8599;</a>
+</div>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow reveal">PROBLEMS WE SOLVE</div>
+    <h2 class="reveal d1">Real problems.<br><span class="grad">Working systems.</span></h2>
+    <p class="prob-intro reveal d2">Well-documented, everyday business problems across industries - the kind Stacknity.ai exists to fix. For each one: how we map the workflow and where AI actually earns its place. <b>Client work stays confidential; the approach doesn't.</b></p>
+  </div>
+</header>
+
+<section class="problems" style="padding-top:0">
+  <div class="wrap">
+    <div class="prob-grid">
+      <div class="prob reveal d1">
+        <div class="prob-top"><span class="prob-num">01</span><span class="prob-ind">CONFIDENTIAL &middot; LOGISTICS</span></div>
+        <h3>Paper proof-of-delivery slows billing</h3>
+        <p>Delivery notes and lorry receipts arrive as WhatsApp photos and email attachments, while invoicing waits for someone to type them up.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Audit the delivery-to-invoice workflow first</li><li>Extraction pipeline reads PODs and validates them against orders</li><li>Exceptions go to a human; clean documents bill the same day</li></ul>
+      </div>
+      <div class="prob reveal d2">
+        <div class="prob-top"><span class="prob-num">02</span><span class="prob-ind">CONFIDENTIAL &middot; HEALTHCARE</span></div>
+        <h3>Prior authorizations eat clinical hours</h3>
+        <p>Staff re-read payer policy documents and re-enter the same patient details for every authorization request.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>RAG over payer policies and patient records</li><li>Draft authorization packets with citations to the exact policy clause</li><li>A clinician approves every submission before it leaves</li></ul>
+      </div>
+      <div class="prob reveal d3">
+        <div class="prob-top"><span class="prob-num">03</span><span class="prob-ind">CONFIDENTIAL &middot; E-COMMERCE</span></div>
+        <h3>Support tickets outgrow the team</h3>
+        <p>Order status, returns and refund questions bury the support team, and response time slips as volume grows.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Classify and route every incoming ticket</li><li>RAG answers grounded in store policies and live order data</li><li>Humans keep refunds, disputes and edge cases</li></ul>
+      </div>
+      <div class="prob reveal d1">
+        <div class="prob-top"><span class="prob-num">04</span><span class="prob-ind">CONFIDENTIAL &middot; MANUFACTURING</span></div>
+        <h3>Downtime reports written from memory</h3>
+        <p>Maintenance and quality data lives in logbooks and spreadsheets, so root-cause analysis starts from zero after every breakdown.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Structure machine, shift and inspection data in one place</li><li>Agents draft shift and root-cause reports straight from the logs</li><li>An engineer signs off; the history stays searchable forever</li></ul>
+      </div>
+      <div class="prob reveal d2">
+        <div class="prob-top"><span class="prob-num">05</span><span class="prob-ind">CONFIDENTIAL &middot; FINANCE</span></div>
+        <h3>Invoice matching is a full-time job</h3>
+        <p>Three-way matching across purchase orders, receipts and invoices is manual, and month-end close drags for days.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Extraction fine-tuned on the company's invoice formats</li><li>A matching agent reconciles PO, receipt and invoice line by line</li><li>Only mismatches reach a human reviewer</li></ul>
+      </div>
+      <div class="prob reveal d3">
+        <div class="prob-top"><span class="prob-num">06</span><span class="prob-ind">CONFIDENTIAL &middot; INSURANCE</span></div>
+        <h3>Claims intake is copy-paste work</h3>
+        <p>First-notice documents, photos and forms get re-keyed into the claims system before triage can even start.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Intake agents read submissions and extract the entities that matter</li><li>Score and route each claim to the right adjuster</li><li>A full audit trail on every automated step</li></ul>
+      </div>
+      <div class="prob reveal d1">
+        <div class="prob-top"><span class="prob-num">07</span><span class="prob-ind">CONFIDENTIAL &middot; LEGAL</span></div>
+        <h3>Contracts reviewed line by line</h3>
+        <p>Every NDA and vendor agreement needs the same clause checks, and renewal dates get missed in shared drives.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Extraction fine-tuned for the firm's clause patterns</li><li>RAG answers with citations to the exact clause text</li><li>The reviewer decides; the system tracks every date</li></ul>
+      </div>
+      <div class="prob reveal d2">
+        <div class="prob-top"><span class="prob-num">08</span><span class="prob-ind">CONFIDENTIAL &middot; SAAS</span></div>
+        <h3>Regression suites grow faster than QA</h3>
+        <p>Every release adds more tests, failures take hours to triage, and flaky tests quietly erode trust in the suite.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Agents generate and maintain test cases from real user flows</li><li>Failure triage that separates real bugs from flakes, with evidence</li><li>QA reviews a short diagnosis instead of raw logs</li></ul>
+      </div>
+      <div class="prob reveal d3">
+        <div class="prob-top"><span class="prob-num">09</span><span class="prob-ind">CONFIDENTIAL &middot; REAL ESTATE</span></div>
+        <h3>Leads go cold in the inbox</h3>
+        <p>Enquiries arrive across portals and WhatsApp, and follow-up depends on whoever remembers to reply first.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>An agent engages and qualifies every lead within minutes</li><li>Site visits booked straight into the sales calendar</li><li>The CRM stays current and hot leads reach a human fast</li></ul>
+      </div>
+      <div class="prob reveal d1">
+        <div class="prob-top"><span class="prob-num">10</span><span class="prob-ind">CONFIDENTIAL &middot; STAFFING</span></div>
+        <h3>Resume screening drowns recruiters</h3>
+        <p>Hundreds of applications per role, and the scheduling back-and-forth eats the rest of the week.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Structured screening against role criteria, not keyword bingo</li><li>Scheduling agents handle the calendar ping-pong</li><li>Recruiters spend their time on the shortlist, not the pile</li></ul>
+      </div>
+      <div class="prob reveal d2">
+        <div class="prob-top"><span class="prob-num">11</span><span class="prob-ind">CONFIDENTIAL &middot; FINTECH</span></div>
+        <h3>KYC verification is a bottleneck</h3>
+        <p>Documents are checked by hand, mismatches bounce back and forth, and audits ask for evidence months later.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>Extraction and verification pipeline for identity documents</li><li>Automated cross-checks with a complete audit trail</li><li>Compliance reviews only the flagged cases</li></ul>
+      </div>
+      <div class="prob reveal d3">
+        <div class="prob-top"><span class="prob-num">12</span><span class="prob-ind">CONFIDENTIAL &middot; EDUCATION</span></div>
+        <h3>Content and queries scale with students</h3>
+        <p>Course material takes weeks to build, and the same student questions arrive every single term.</p>
+        <div class="prob-build">HOW STACKNITY SOLVES IT</div>
+        <ul><li>RAG over the curriculum answers questions with citations</li><li>Agents draft new material from approved source content</li><li>Faculty edits and approves everything before it ships</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2 class="reveal d1">Your problem <span class="grad">not listed?</span></h2>
+    <p class="lead reveal d2">These are twelve common ones. Yours is probably just as fixable - the audit costs a conversation.</p>
+    <a href="contact.html" class="btn reveal d3">Tell us yours &#8599;</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo"><span class="dot"></span>STACKNITY<span class="grad">.AI</span></div>
+        <div class="tagline">PROBLEM FIRST. AI SECOND.</div>
+        <p class="foot-note">AI consulting, LLM fine-tuning, agentic systems and AI engineers on demand. A Stacknity Technologies venture, Bengaluru, India.</p>
+      </div>
+      <div class="foot-col">
+        <div class="foot-head">COMPANY</div>
+        <a href="services.html">Services</a>
+        <a href="problems.html">Problems we solve</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <div class="foot-head">ACCOUNT</div>
+        <a href="login.html">Client login</a>
+        <a href="signup.html">Create account</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+      <div class="foot-col">
+        <div class="foot-head">LEGAL &amp; SOCIAL</div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="mailto:stacknity.technologies@gmail.com">Email us</a>
+        <a href="https://www.linkedin.com/in/ravishankarbera" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>Bengaluru, India</span>
+      <span>&copy; 2026 Stacknity.ai, a Stacknity Technologies venture</span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

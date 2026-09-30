@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Login - Stacknity.ai</title>
+<meta name="description" content="Sign in to your Stacknity.ai client account.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23081410'/%3E%3Ccircle cx='32' cy='32' r='12' fill='none' stroke='%238cffc0' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%238cffc0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="canonical" href="https://ravishankarbera.github.io/stacknity.ai/login.html">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Client Login - Stacknity.ai">
+<meta property="og:description" content="Sign in to your Stacknity.ai client account.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stacknity.ai">
+<meta property="og:url" content="https://ravishankarbera.github.io/stacknity.ai/login.html">
+<meta property="og:image" content="https://ravishankarbera.github.io/stacknity.ai/mascot-robot.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Client Login - Stacknity.ai">
+<meta name="twitter:description" content="Sign in to your Stacknity.ai client account.">
+<meta name="twitter:image" content="https://ravishankarbera.github.io/stacknity.ai/mascot-robot.webp">
+<meta name="author" content="Ravi Shankar Bera">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="dot"></span>STACKNITY<span class="grad">.AI</span></a>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="problems.html">Problems</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="nav-login active">Client login</a>
+    </div>
+    <div class="nav-right">
+      <a href="contact.html" class="btn small">Start a project &#8599;</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="problems.html">Problems We Solve</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="login.html">Client login</a>
+  <a href="signup.html">Create account</a>
+  <a href="contact.html" class="btn">Start a project &#8599;</a>
+</div>
+
+<div class="auth-wrap">
+  <div class="wrap auth-card">
+    <div class="auth-head">
+      <div class="eyebrow reveal">CLIENT ACCOUNT</div>
+      <h2 class="reveal d1">Welcome back.</h2>
+      <p class="reveal d2">Sign in to your Stacknity.ai client dashboard.</p>
+    </div>
+    <div class="form-win reveal d2">
+      <div class="macbar"><i></i><i></i><i></i><span>secure sign-in</span></div>
+      <form id="login-form">
+        <div class="field">
+          <label for="li-email">EMAIL</label>
+          <input id="li-email" type="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="li-pass">PASSWORD</label>
+          <input id="li-pass" type="password" required autocomplete="current-password">
+        </div>
+        <div class="form-status" id="li-status"></div>
+        <button type="submit" class="btn">Sign in &#8599;</button>
+      </form>
+    </div>
+    <p class="auth-alt reveal d3">No account yet? <a href="signup.html">Create one</a> - it takes a minute.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-base" style="border-top:none;padding-top:0">
+      <span>Bengaluru, India</span>
+      <span>&copy; 2026 Stacknity.ai, a Stacknity Technologies venture</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
