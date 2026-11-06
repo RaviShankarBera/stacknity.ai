@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask Us Anything About AI | Stacknity.ai</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',-apple-system,Segoe UI,Roboto,sans-serif; background:#081410; color:#eafff4; min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:28px 18px 40px; }
+  .card { width:100%; max-width:520px; }
+  .brand { text-align:center; margin-bottom:18px; }
+  .wordmark { font-weight:800; font-size:26px; letter-spacing:1.5px; }
+  .wordmark span { color:#5df0b2; }
+  .tag { font-size:11px; letter-spacing:3px; color:#8fdcb6; text-transform:uppercase; margin-top:4px; }
+  .event { text-align:center; font-size:12.5px; color:#9fd8bd; border:1px solid rgba(120,240,190,.3); border-radius:999px; padding:7px 14px; margin:14px auto 22px; display:inline-block; }
+  .eventwrap { text-align:center; }
+  h1 { font-size:24px; line-height:1.25; text-align:center; margin-bottom:8px; }
+  h1 .mint { color:#5df0b2; }
+  p.sub { text-align:center; font-size:14px; color:#bfe9d4; line-height:1.55; margin-bottom:22px; }
+  form { background:#0d241b; border:1px solid rgba(120,240,190,.25); border-radius:16px; padding:22px; }
+  label { display:block; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7fd9ae; margin:14px 0 6px; }
+  label:first-child { margin-top:0; }
+  input, textarea { width:100%; background:#081a13; border:1px solid rgba(120,240,190,.3); border-radius:10px; color:#eafff4; font-size:15px; padding:11px 12px; font-family:inherit; }
+  input:focus, textarea:focus { outline:none; border-color:#5df0b2; box-shadow:0 0 0 3px rgba(93,240,178,.15); }
+  textarea { min-height:110px; resize:vertical; }
+  .req { color:#5df0b2; }
+  button { width:100%; margin-top:20px; background:linear-gradient(135deg,#2fd694,#17b87f); color:#04241a; font-weight:700; font-size:16px; border:none; border-radius:12px; padding:14px; cursor:pointer; }
+  button:disabled { opacity:.6; cursor:default; }
+  .status { margin-top:14px; font-size:14px; text-align:center; min-height:20px; }
+  .status.ok { color:#5df0b2; }
+  .status.err { color:#ff9d9d; }
+  .foot { text-align:center; font-size:12px; color:#6fae8f; margin-top:22px; line-height:1.8; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">
+      <div class="wordmark">STACKNITY<span>.AI</span></div>
+      <div class="tag">Problem first. AI second.</div>
+    </div>
+    <div class="eventwrap"><div class="event">Bengaluru Tech Summit 2026 &middot; Stacknity.ai Exhibition Booth</div></div>
+    <h1>Ask us anything about <span class="mint">AI</span></h1>
+    <p class="sub">Have a question about AI, or a business problem you want AI to solve? Send it here and our team will get back to you.</p>
+    <form id="enquiry-form">
+      <input type="checkbox" name="botcheck" style="display:none">
+      <label for="f-name">Your name <span class="req">*</span></label>
+      <input id="f-name" name="name" type="text" required autocomplete="name">
+      <label for="f-email">Email <span class="req">*</span></label>
+      <input id="f-email" name="email" type="email" required autocomplete="email">
+      <label for="f-company">Company (optional)</label>
+      <input id="f-company" name="company" type="text" autocomplete="organization">
+      <label for="f-msg">Your AI question or business problem <span class="req">*</span></label>
+      <textarea id="f-msg" name="message" required placeholder="e.g. Our support team drowns in repetitive tickets. Can AI triage them?"></textarea>
+      <button type="submit" id="f-btn">Send</button>
+      <div class="status" id="f-status"></div>
+    </form>
+    <div class="foot">Stacknity.ai &middot; AI Consulting, LLM Training, Agentic AI Systems</div>
+  </div>
+<script>
+document.getElementById('enquiry-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('f-btn'), st = document.getElementById('f-status');
+  btn.disabled = true; st.className = 'status'; st.textContent = 'Sending...';
+  var data = {
+    access_key: 'd0eae88b-e440-47a8-8a38-fe2e9925d6f6',
+    subject: 'BTS 2026 AI Enquiry - ' + document.getElementById('f-name').value,
+    from_name: 'Stacknity.ai BTS Poster QR',
+    name: document.getElementById('f-name').value,
+    email: document.getElementById('f-email').value,
+    company: document.getElementById('f-company').value,
+    message: document.getElementById('f-msg').value,
+    botcheck: e.target.querySelector('[name=botcheck]').checked ? '1' : ''
+  };
+  try {
+    var r = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST', headers: {'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(data)
+    });
+    var j = await r.json();
+    if (j.success) {
+      st.className = 'status ok';
+      st.textContent = 'Thank you! Your enquiry has been sent. We will get back to you soon.';
+      e.target.reset();
+    } else { throw new Error(j.message || 'failed'); }
+  } catch (err) {
+    st.className = 'status err';
+    st.textContent = 'Something went wrong. Please try again.';
+  }
+  btn.disabled = false;
+});
+</script>
+</body>
+</html>
