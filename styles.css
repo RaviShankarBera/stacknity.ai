@@ -367,3 +367,34 @@ footer .logo .dot{background:#f6d400}
 .macbar span{color:#0d0d0d}
 .nav-links a.active,.nav-links a.nav-login.active{color:#f6d400!important;background:#0d0d0d}
 .nav-links a.nav-login{color:#0d0d0d}
+
+/* ===== Revision: logo, bigger inner typography, scroll motion ===== */
+.logo-img{height:30px;width:auto;display:block}
+nav .logo{padding:0}
+.page-hero h2{font-size:clamp(44px,8.4vw,128px);line-height:.92;letter-spacing:-.055em;font-weight:800}
+.page-hero h2 .grad{font-size:.62em;display:inline-block;line-height:1.1;margin-top:.1em}
+.page-hero .lead{font-size:clamp(16px,1.5vw,20px);max-width:640px}
+.page-hero{padding-top:clamp(130px,16vw,200px)}
+.eyebrow{opacity:.75}
+.svc-grid,.prob-grid,.values-grid{align-items:stretch}
+.svc,.prob{height:100%;display:flex;flex-direction:column}
+.svc h3,.prob h3,.value h3{font-size:clamp(20px,2vw,28px);letter-spacing:-.035em;line-height:1.1}
+.prob-top,.tag{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#scrollbar{position:fixed;left:0;top:0;height:3px;width:100%;background:#0d0d0d;transform:scaleX(0);transform-origin:left;z-index:200;pointer-events:none}
+.reveal-line{display:block;overflow:hidden}
+.reveal-line>span{display:block;transform:translateY(105%);transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.in .reveal-line>span,.reveal-line.in>span{transform:none}
+.reveal.pop{transform:translateY(40px) scale(.96)}
+.reveal.pop.in{transform:none}
+.reveal.slide-l{transform:translateX(-40px)}.reveal.slide-r{transform:translateX(40px)}
+.reveal.slide-l.in,.reveal.slide-r.in{transform:none}
+[data-parallax]{will-change:transform}
+.float-bot{animation:botfloat 5s ease-in-out infinite}
+@keyframes botfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media (max-width:720px){
+  .logo-img{height:26px}
+  .page-hero h2{font-size:clamp(40px,13vw,64px)}
+  .svc,.prob{padding:22px}
+  .prob-top{flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){.reveal,.reveal-line>span{opacity:1!important;transform:none!important;transition:none!important}}

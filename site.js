@@ -96,3 +96,37 @@
     });
   }
 })();
+
+/* ===== inner-page scroll motion ===== */
+(function(){
+  if(document.querySelector('#root'))return;
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bar=document.createElement('div');bar.id='scrollbar';document.body.appendChild(bar);
+  // auto-reveal extra blocks with stagger
+  var groups=['.svc-grid > *','.prob-grid > *','.values-grid > *','.foot-grid > *','.legal > *','.chips > *','.founder-card','.form-win','.dash-grid > *','.svc ul li','.prob ul li'];
+  groups.forEach(function(sel){document.querySelectorAll(sel).forEach(function(el,i){
+    if(!el.classList.contains('reveal')){el.classList.add('reveal');if(sel.indexOf('li')<0&&sel!=='.legal > *')el.classList.add('pop');el.style.transitionDelay=Math.min(i,6)*70+'ms';}
+  });});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  // headline line-mask rise
+  document.querySelectorAll('.page-hero h2,.auth-head h2,h1').forEach(function(h){
+    if(h.dataset.split)return;h.dataset.split=1;
+    var parts=h.innerHTML.split(/<br\s*\/?>/i);
+    h.innerHTML=parts.map(function(p,i){return '<span class="reveal-line"><span style="transition-delay:'+(i*120)+'ms">'+p+'</span></span>';}).join('');
+    requestAnimationFrame(function(){requestAnimationFrame(function(){h.querySelectorAll('.reveal-line').forEach(function(l){l.classList.add('in');});});});
+  });
+  // scroll progress + hero parallax
+  var par=document.querySelectorAll('.page-hero .wrap');
+  var tick=false;
+  function onScroll(){
+    if(tick)return;tick=true;
+    requestAnimationFrame(function(){
+      var h=document.documentElement.scrollHeight-innerHeight;
+      bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';
+      if(!reduced)par.forEach(function(p){p.style.transform='translateY('+Math.min(scrollY*.18,90)+'px)';p.style.opacity=Math.max(0,1-scrollY/700);});
+      tick=false;
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
