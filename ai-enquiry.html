@@ -4,33 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ask Us Anything About AI | Stacknity.ai</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Inter',-apple-system,Segoe UI,Roboto,sans-serif; background:#081410; color:#eafff4; min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:28px 18px 40px; }
+  body { font-family:'Inter Tight',ui-sans-serif,system-ui,sans-serif; background:#f6d400; color:#0d0d0d; min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:28px 18px 40px; }
   .card { width:100%; max-width:520px; }
   .brand { text-align:center; margin-bottom:18px; }
-  .wordmark { font-weight:800; font-size:26px; letter-spacing:1.5px; }
-  .wordmark span { color:#5df0b2; }
-  .tag { font-size:11px; letter-spacing:3px; color:#8fdcb6; text-transform:uppercase; margin-top:4px; }
-  .event { text-align:center; font-size:12.5px; color:#9fd8bd; border:1px solid rgba(120,240,190,.3); border-radius:999px; padding:7px 14px; margin:14px auto 22px; display:inline-block; }
+  .wordmark { font-weight:800; font-size:26px; letter-spacing:-.04em; }
+  .wordmark span { font-family:Caveat,cursive; font-weight:700; letter-spacing:0; }
+  .tag { font-size:10px; font-weight:600; letter-spacing:.16em; opacity:.7; text-transform:uppercase; margin-top:4px; }
+  .event { text-align:center; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; border:1.5px solid #0d0d0d; border-radius:999px; padding:7px 14px; margin:14px auto 22px; display:inline-block; }
   .eventwrap { text-align:center; }
-  h1 { font-size:24px; line-height:1.25; text-align:center; margin-bottom:8px; }
-  h1 .mint { color:#5df0b2; }
-  p.sub { text-align:center; font-size:14px; color:#bfe9d4; line-height:1.55; margin-bottom:22px; }
-  form { background:#0d241b; border:1px solid rgba(120,240,190,.25); border-radius:16px; padding:22px; }
-  label { display:block; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7fd9ae; margin:14px 0 6px; }
+  h1 { font-size:30px; font-weight:800; line-height:1.05; letter-spacing:-.045em; text-transform:uppercase; text-align:center; margin-bottom:8px; }
+  h1 .mint { font-family:Caveat,cursive; font-weight:700; text-transform:none; letter-spacing:0; font-size:1.2em; }
+  p.sub { text-align:center; font-size:14px; color:rgba(13,13,13,.78); line-height:1.55; margin-bottom:22px; }
+  form { background:transparent; border:1.5px solid #0d0d0d; border-radius:18px; padding:22px; }
+  label { display:block; font-size:10px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:rgba(13,13,13,.75); margin:14px 0 6px; }
   label:first-child { margin-top:0; }
-  input, textarea { width:100%; background:#081a13; border:1px solid rgba(120,240,190,.3); border-radius:10px; color:#eafff4; font-size:15px; padding:11px 12px; font-family:inherit; }
-  input:focus, textarea:focus { outline:none; border-color:#5df0b2; box-shadow:0 0 0 3px rgba(93,240,178,.15); }
+  input, textarea { width:100%; background:transparent; border:1.5px solid #0d0d0d; border-radius:12px; color:#0d0d0d; font-size:15px; padding:11px 12px; font-family:inherit; }
+  input:focus, textarea:focus { outline:none; box-shadow:0 0 0 3px rgba(13,13,13,.18); }
   textarea { min-height:110px; resize:vertical; }
-  .req { color:#5df0b2; }
-  button { width:100%; margin-top:20px; background:linear-gradient(135deg,#2fd694,#17b87f); color:#04241a; font-weight:700; font-size:16px; border:none; border-radius:12px; padding:14px; cursor:pointer; }
+  .req { color:#0d0d0d; }
+  button { width:100%; margin-top:20px; background:transparent; color:#0d0d0d; font-family:inherit; font-weight:600; font-size:11px; letter-spacing:.14em; text-transform:uppercase; border:1.5px solid #0d0d0d; border-radius:999px; padding:14px; cursor:pointer; transition:background .25s,color .25s; }
+  button:hover { background:#0d0d0d; color:#f6d400; }
   button:disabled { opacity:.6; cursor:default; }
   .status { margin-top:14px; font-size:14px; text-align:center; min-height:20px; }
-  .status.ok { color:#5df0b2; }
-  .status.err { color:#ff9d9d; }
-  .privacy { margin-top:14px; font-size:11.5px; color:#7fb894; text-align:center; line-height:1.6; }
-  .foot { text-align:center; font-size:12px; color:#6fae8f; margin-top:22px; line-height:1.8; }
+  .status.ok { color:#0d0d0d; font-weight:600; }
+  .status.err { color:#8a1c1c; font-weight:600; }
+  .privacy { margin-top:14px; font-size:11.5px; color:rgba(13,13,13,.65); text-align:center; line-height:1.6; }
+  .foot { text-align:center; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(13,13,13,.7); margin-top:22px; line-height:1.8; }
 </style>
 </head>
 <body>

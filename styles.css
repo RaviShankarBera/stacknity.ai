@@ -302,3 +302,68 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;position:relative;z-
   .hud-stats{grid-template-columns:repeat(3,1fr)}
   .foot-grid{grid-template-columns:1fr}
 }
+
+/* ===== Molten Ink theme (yellow / black) - overrides ===== */
+:root{
+  --bg:#f6d400; --bg-deep:#f6d400; --card:transparent; --card-solid:#f6d400;
+  --line:rgba(13,13,13,.25); --line-strong:#0d0d0d;
+  --cyan:#0d0d0d; --cyan-bright:#0d0d0d; --blue:#0d0d0d; --green:#0d0d0d;
+  --white:#0d0d0d; --muted:rgba(13,13,13,.62);
+  --mono:'Inter Tight',ui-sans-serif,system-ui,sans-serif;
+  --sans:'Inter Tight',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+body{background:#f6d400;color:#0d0d0d;font-family:var(--sans)}
+body::before{display:none}
+::selection{background:#0d0d0d;color:#f6d400}
+.grad{background:none;-webkit-background-clip:initial;background-clip:initial;color:#0d0d0d;font-family:Caveat,'Segoe Script',cursive;font-weight:700;text-transform:none;letter-spacing:-.01em}
+nav.scrolled{background:rgba(246,212,0,.92);backdrop-filter:blur(10px);border-bottom-color:rgba(13,13,13,.25)}
+.nav-links a,.logo{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#0d0d0d}
+.nav-links a{border:1.5px solid #0d0d0d;border-radius:999px;padding:6px 12px;transition:background .25s,color .25s}
+.nav-links a:hover,.nav-links a.active{background:#0d0d0d;color:#f6d400}
+.logo{font-size:13px;font-weight:800}
+.logo .dot{background:#0d0d0d;box-shadow:none}
+.btn,.btn.small{background:transparent;color:#0d0d0d;border:1.5px solid #0d0d0d;border-radius:999px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:10px 18px;box-shadow:none}
+.btn:hover{background:#0d0d0d;color:#f6d400;transform:none;box-shadow:none}
+.btn.ghost{background:transparent;color:#0d0d0d;border-color:#0d0d0d}
+.btn.ghost:hover{background:#0d0d0d;color:#f6d400;box-shadow:none}
+.btn.danger{color:#0d0d0d;border-color:#0d0d0d}
+.btn.danger:hover{background:#0d0d0d;color:#f6d400;box-shadow:none}
+h1,h2,h3,h4{font-family:'Inter Tight',sans-serif;font-weight:800;letter-spacing:-.045em;color:#0d0d0d}
+h1,h2{text-transform:uppercase}
+.eyebrow{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.18em;color:#0d0d0d;opacity:.7}
+.eyebrow::before{background:#0d0d0d}
+.page-hero::before{display:none}
+.field label{font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:rgba(13,13,13,.7);text-transform:uppercase}
+.field input,.field textarea,.field select{background:transparent;border:1.5px solid #0d0d0d;border-radius:12px;color:#0d0d0d;font-family:var(--sans)}
+.field input:focus,.field textarea:focus{border-color:#0d0d0d;box-shadow:0 0 0 3px rgba(13,13,13,.18)}
+.field input::placeholder,.field textarea::placeholder{color:rgba(13,13,13,.45)}
+input,textarea,select{font-family:var(--sans)}
+footer{background:#0d0d0d;color:#f6d400;border-top:0}
+footer *{color:#f6d400}
+footer a:hover{opacity:.7}
+.mobile-menu{background:#f6d400}
+.mobile-menu a{color:#0d0d0d}
+.nav-toggle span{background:#0d0d0d}
+hr{border-color:rgba(13,13,13,.25)}
+.contact::before,.cta-band::before,.page-hero::after{display:none}
+.mobile-menu{background:rgba(246,212,0,.98)}
+.macwin,.form-win{background:#f6d400;border:1.5px solid #0d0d0d;box-shadow:none}
+.macbar{background:transparent;border-bottom:1.5px solid #0d0d0d}
+.hud-stat{background:transparent;border:1.5px solid #0d0d0d}
+.svc,.prob,.founder-card,.card{background:transparent;border:1.5px solid #0d0d0d;border-radius:18px;box-shadow:none}
+.svc:hover,.prob:hover{box-shadow:none;background:rgba(13,13,13,.06)}
+.prob-ind,.chip,.badge{background:transparent;color:#0d0d0d;border:1.5px solid #0d0d0d;font-family:var(--sans);letter-spacing:.14em;text-transform:uppercase;font-size:10px;font-weight:600}
+.founder-card .avatar{background:#0d0d0d;color:#f6d400}
+.macbody .fit,.form-status.ok{background:transparent;border:1.5px solid #0d0d0d;color:#0d0d0d}
+.mascot{mix-blend-mode:normal;filter:none}
+.manifesto .orb{mix-blend-mode:normal;filter:none}
+p,li,.lead{color:rgba(13,13,13,.78)}
+footer p,footer li,footer a,footer span,footer h4{color:#f6d400}
+.nav-links a.nav-login{}
+footer,footer *{color:#f6d400!important}
+footer .foot-note,footer .tagline{opacity:.75}
+footer .logo .dot{background:#f6d400}
+.macbar i{background:#0d0d0d!important}
+.macbar span{color:#0d0d0d}
+.nav-links a.active,.nav-links a.nav-login.active{color:#f6d400!important;background:#0d0d0d}
+.nav-links a.nav-login{color:#0d0d0d}
